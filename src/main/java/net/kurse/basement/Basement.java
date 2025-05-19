@@ -1,7 +1,6 @@
 package net.kurse.basement;
 
 import net.kurse.basement.block.ModBlocks;
-import net.kurse.basement.block.custom.MEProxyBlock;
 import net.kurse.basement.enchantment.EnchantmentEffects;
 import net.kurse.basement.item.ModItems;
 import net.kurse.basement.loot.LootModifiers;

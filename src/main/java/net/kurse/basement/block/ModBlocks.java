@@ -1,7 +1,6 @@
 package net.kurse.basement.block;
 
-import net.kurse.basement.Basement;
-import net.kurse.basement.block.custom.MEProxyBlock;
+
 import net.kurse.basement.block.custom.UruLampBlock;
 import net.kurse.basement.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -15,8 +14,10 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 
 import java.util.function.Supplier;
 
+import static net.kurse.basement.Basement.MOD_ID;
+
 public class ModBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Basement.MOD_ID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MOD_ID);
 
     public static final DeferredBlock<Block> URU_BLOCK = registerBlock("uru_block",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -41,7 +42,7 @@ public class ModBlocks {
             () -> new UruLampBlock(BlockBehaviour.Properties.of().strength(3f)
                     .requiresCorrectToolForDrops().lightLevel(state -> state.getValue(UruLampBlock.CLICKED) ? 15 : 0)));
 
-    public static final DeferredBlock<MEProxyBlock> ME_PROXY_BLOCK = registerBlock("me_proxy_block", () -> new MEProxyBlock());
+    //public static final DeferredBlock<MEProxyBlock> ME_PROXY_BLOCK = registerBlock("me_proxy_block", () -> new MEProxyBlock());
 
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);
